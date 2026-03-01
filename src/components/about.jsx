@@ -1,29 +1,30 @@
+import { Link } from "react-router-dom";
 function About(){
     return(
-        <section className="about">
-  <div className="about-container">
-    <div className="about-image">
-      <img src="/coffee-about.jpg" alt="Coffee beans" />
-    </div>
+        <section className="py-20 bg-[#fdf8f3]">
+      <div className="max-w-7xl mx-auto px-6 text-center">
 
-    <div className="about-text">
-      <h2>Crafted With Passion, Brewed to Perfection</h2>
-      <p>
-        At Brew Haven, coffee is more than just a drink — it’s a ritual,
-        a comfort, and a daily inspiration. We source premium beans and
-        roast them in small batches to ensure unmatched freshness and flavor.
-      </p>
+        {/* Section Title */}
+        <p className="text-3xl md:text-4xl font-bold mb-3">
+          About BrewCart
+        </p>
+        <h3 className=" font-semibold text-amber-800 mb-3">
+            Crafted with Passion and Roasted to Perfection for an Unforgettable Coffee Experience
+            </h3>
+        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+          At Brew Haven, coffee is more than just a drink — it’s a ritual, a comfort, and a daily inspiration.
+We carefully source premium Arabica beans from trusted farms and roast them in small batches to preserve their natural aroma and richness.<br/><br/>
 
-      <div className="about-highlights">
-        <span>🌱 Premium Quality</span>
-        <span>🔥 Freshly Roasted</span>
-        <span>🚚 Fast Delivery</span>
-      </div>
-
-      <button>Discover Our Collection</button>
-    </div>
-  </div>
-</section>
+Every blend is crafted with precision, ensuring a smooth, bold flavor in every sip. From farm to cup, our mission is simple — deliver freshness, quality, and happiness in every order.
+        </p>
+        <Link
+          to="/shop"
+          className="bg-[#6f4e37] text-white px-4 py-2 rounded-lg hover:bg-[#5a3d2b] transition"
+        >
+          Discover Our Collections
+        </Link>
+        </div>
+        </section>
     )
 }
 export default About;

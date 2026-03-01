@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Navbar from "./components/navbar.jsx";
+import Footer from "./components/footer.jsx";
 import Home from "./pages/home.jsx";
 import Shop from "./pages/shop.jsx";
 import Cart from "./pages/cart.jsx";
-
+import SignIn from "./pages/signin.jsx";
+import Register from "./pages/register.jsx";
 function App() {
   const [products, setProducts] = useState([]);   // ✅ store products here
   const [cart, setCart] = useState([]);
@@ -60,7 +62,10 @@ function App() {
             />
           } 
         />
+        <Route path="/signin" element={<SignIn/>} />
+        <Route path="/register" element={<Register/>} />
       </Routes>
+      <Footer/>
     </>
   );
 }

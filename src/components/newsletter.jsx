@@ -18,7 +18,7 @@ function Newsletter() {
           <input
             type="email"
             placeholder="Enter your email address"
-            className="w-full sm:w-80 px-4 py-3 rounded-lg text-white border-1 focus:outline-none"
+            className="w-full sm:w-80 px-4 py-3 rounded-lg text-white border focus:outline-none"
           />
 
           <button

@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 function Products({ products, addToCart }) {
   return (
     <>
-     <div className="flex items-center justify-between mb-8">
+     <div className="flex items-center justify-between mb-3">
       <h3 className="text-4xl font-bold mx-auto text-center py-10">
         Featured Products
       </h3>

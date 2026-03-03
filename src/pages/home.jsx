@@ -14,7 +14,7 @@ function Home({products, addToCart}) {
             <WhyChooseUs/>
             <Testimonials/>
             <Newsletter/>
-            <Footer/>
+            
         </>
     )
 }

@@ -29,7 +29,7 @@ function Navbar({ cartCount }) {
           <Link to="/about">
             <li className="hover:text-white cursor-pointer">About</li>
           </Link>
-          <Link to="/contact">
+          <Link to="/contactus">
             <li className="hover:text-white cursor-pointer">Contact</li>
           </Link>
         </ul>

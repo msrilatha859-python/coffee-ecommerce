@@ -1,6 +1,27 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 
 function SignIn() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/login/", {
+        username: username,
+        password: password,
+      });
+
+      localStorage.setItem("token", response.data.access);
+      alert("Login successful");
+
+    } catch (error) {
+      alert("Invalid credentials");
+    }
+  };
   return (
     <section className="min-h-screen flex items-center justify-center bg-[#fdf8f3]">
       <div className=" bg-light shadow-amber-950 p-8 rounded-2xl shadow-lg w-full max-w-md">
@@ -11,8 +32,8 @@ function SignIn() {
 
         <form className="space-y-4">
           <input
-            type="email"
-            placeholder="Email"
+            type="text"
+            placeholder="username"
             className="w-full px-4 py-3 border rounded-lg focus:outline-none"
           />
 

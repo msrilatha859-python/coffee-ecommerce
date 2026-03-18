@@ -62,7 +62,7 @@ const AboutUs = () => {
        <div className="mb-12">
 
   <motion.div
-    className="bg-gray-100 p-8 rounded-2xl shadow-lg max-w-8xl mx-auto"
+    className=" bg-[#fdf8f3] p-8 rounded-2xl shadow-lg max-w-8xl mx-auto"
     whileHover={{ scale: 1.03 }}
   >
     <h2 className="text-3xl font-bold mb-6 text-center">

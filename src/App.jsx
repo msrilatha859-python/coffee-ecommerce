@@ -21,7 +21,7 @@ function App() {
 
     const token = localStorage.getItem("token");
 
-    axios.get("http://127.0.0.1:8000/api/products/", {
+    axios.get("https://restapi-django-5nhm.onrender.com/api/products/", {
       headers: {
         Authorization: `Bearer ${token}`
       }

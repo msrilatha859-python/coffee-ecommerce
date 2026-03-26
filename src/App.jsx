@@ -13,28 +13,51 @@ import SignIn from "./pages/signin.jsx";
 import Register from "./pages/register.jsx";
 import Login from "./pages/login.jsx";
 function App() {
+ const dummyProducts = [
+  {
+    id: 1,
+    name: "Coffee",
+    price: 120,
+    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80"
+  },
+  {
+    id: 2,
+    name: "Tea",
+    price: 80,
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80"
+  },
+  {
+    id: 3,
+    name: "Cold Coffee",
+    price: 150,
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80"
+  }
+];
   const [products, setProducts] = useState([]);   // ✅ store products here
   const [cart, setCart] = useState([]);
 
   // ✅ Fetch only once
  useEffect(() => {
+  const token = localStorage.getItem("token");
 
-    const token = localStorage.getItem("token");
-
-    axios.get("https://restapi-django-5nhm.onrender.com/api/products/", {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    .then((response) => {
+  axios.get("https://restapi-django-5nhm.onrender.com/api/products/", {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+  .then((response) => {
+    if (response.data && response.data.length > 0) {
       setProducts(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    } else {
+      setProducts(dummyProducts);
+    }
+  })
+  .catch((error) => {
+    console.log("API failed, using dummy data");
+    setProducts(dummyProducts);
+  });
 
-  }, []);
-
+}, []);
   const addToCart = (product) => {
     setCart(prev => [...prev, product]);
   };
